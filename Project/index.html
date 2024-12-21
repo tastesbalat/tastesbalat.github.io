@@ -1,0 +1,468 @@
+<html lang="en">
+<head>
+    <title>Tastes' Balat</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #faf3d4;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            padding: 20px; 
+            background-color: #f5eacb;
+        }
+
+        .logo {
+            width: 120px; 
+            height: 120px; 
+            margin-right: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+            color: #8b5e3c;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background-color: #f7d4b1;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #8b5e3c;
+            font-weight: bold;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #fff;
+            background-color: #8b5e3c;
+            border-radius: 5px;
+        }
+
+        .tab.active {
+            background-color: #f5eacb;
+            border: 2px solid #ccc;
+        }
+
+        #sorting_options {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .list {
+            margin: 20px;
+        }
+
+        .list_items {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .item-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .item-details {
+            line-height: 1.5;
+        }
+
+        .icons {
+            width: 40px;
+            height: 40px;
+            background-color: #f5eacb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .stars {
+            color: #FFD700; 
+            margin-top: 5px;
+        }
+
+        .sorting_button {
+            margin-left: auto;
+            background-color: #f5eacb;
+            border: 1px solid #ccc;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .tab.active {
+            background-color: #f5eacb;
+            border: 2px solid #ccc;
+        }
+		
+		.restaurant:hover .restaurant-name {
+            display: block;
+        }
+		
+		.link {
+            text-decoration: none;
+            color: #007bff;
+            background-color: #eaeaea;
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-size: 15px;
+			
+        }
+
+		.link:hover {
+            background-color: #ccc; 
+            color: red; 
+            text-decoration: underline; 
+        }
+		
+		.restaurant-name {
+            display: none;
+            font-size: 20px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="Logo1.jpg" alt="Tastes' Balat Logo" class="logo">
+        <h1>Tastes' Balat</h1>
+
+    </header>
+
+    <nav>
+
+        <div class="tab active" onclick="filterContent('all')">All</div>
+        <div class="tab" onclick="filterContent('restaurant')">Restaurants</div>
+        <div class="tab" onclick="filterContent('cafe')">Cafes</div>
+        <div class="tab" onclick="filterContent('coffee-shop')">Coffee Shops</div>
+
+    </nav>
+
+    <div id="sorting_options">
+
+        <label for="sort">Sort by: </label>
+        <select id="sort" onchange="sortContent()">
+            <option value="popularity">Popularity</option>
+            <option value="name">Name</option>
+
+        </select>
+
+    </div>
+ 
+
+    <div class="list">
+
+        <div class="list_items" data-type="cafe" onclick="redirectToPage('restaurants/marangozhane.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍔</div>
+                <div class="item-details">
+                    
+                    <h3>Marangozhane Cafe</h3>
+                    <p>Address: Ayakapı Cd. No:3-1</p>
+                    <div class="stars">★★★★★</div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="list_items" data-type="restaurant" onclick="redirectToPage('restaurants/meshur_kofteci_sami_usta.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍴</div>
+                <div class="item-details">
+
+                    <h3>Meşhur Köfteci Sami Usta</h3>
+                    <p>Address: Ayan Cd. No: 81</p>
+                    <div class="stars">★★★★★</div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="list_items" data-type="restaurant" onclick="redirectToPage('restaurants/dea_balat.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍴</div>
+                <div class="item-details">
+
+                    <h3>DEA Balat</h3>
+                    <p>Address:  Mürselpaşa Cd. No:173</p>
+                    <div class="stars">★★★★☆</div>
+
+                </div>
+            </div>
+
+        </div>
+		
+
+        <div class="list_items" data-type="restaurant" onclick="redirectToPage('restaurants/meshur_balat_iskembecisi.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍗</div>
+                <div class="item-details">
+
+                    <h3>Meşhur Balat İşkembecisi</h3>
+                    <p>Address:  Ayvansaray, Mürselpaşa Cd. No:273</p>
+                    <div class="stars">★★★☆☆</div>
+
+                </div>
+            </div>
+
+        </div>
+		
+
+        <div class="list_items" data-type="restaurant" onclick="redirectToPage('restaurants/meshur_fetih_iskembe.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍗</div>
+                <div class="item-details">
+
+                    <h3>Meşhur Fetih İşkembe</h3>
+                    <p>Address:  Leblebiciler Sk. No:6</p>
+                    <div class="stars">★★★★☆</div>
+
+                </div>
+            </div>
+
+        </div>
+		
+
+        <div class="list_items" data-type="restaurant" onclick="redirectToPage('restaurants/sahan_lokantası_balat.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍗</div>
+                <div class="item-details">
+
+                    <h3>Sahan Lokantası Balat</h3>
+                    <p>Address:  Vodina Cd. No: 184</p>
+                    <div class="stars">★★★★☆</div>
+
+                </div>
+            </div>
+
+        </div>
+		
+
+        <div class="list_items" data-type="cafe" onclick="redirectToPage('restaurants/aras_cafe.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍔</div>
+                <div class="item-details">
+
+                    <h3>Aras Cafe</h3>
+                    <p>Address:  Vodina Cd. No:115</p>
+                    <div class="stars">★★★★☆</div>
+
+                </div>
+            </div>
+
+        </div>
+		
+
+        <div class="list_items" data-type="restaurant" onclick="redirectToPage('restaurants/kofte_budur.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍴</div>
+                <div class="item-details">
+
+                    <h3>Köfte Budur</h3>
+                    <p>Address:  Vodina Cd. No:89/A</p>
+                    <div class="stars">★★★★★</div>
+
+                </div>
+            </div>
+
+        </div>
+		
+
+        <div class="list_items" data-type="restaurant" onclick="redirectToPage('restaurants/gold_balat_restaurant.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍴</div>
+                <div class="item-details">
+
+                    <h3>Gold Balat Restaurant</h3>
+                    <p>Address:  Vodina Cd. No:60</p>
+                    <div class="stars">★★★★★</div>
+
+                </div>
+            </div>
+
+        </div>
+		
+
+        <div class="list_items" data-type="restaurant" onclick="redirectToPage('restaurants/turgut_kebap_restaurant.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍴</div>
+                <div class="item-details">
+
+                    <h3>TurguT Kebap Restaurant</h3>
+                    <p>Address:  Akçin Sk. No:2</p>
+                    <div class="stars">★★★★★</div>
+
+                </div>
+            </div>
+
+        </div>
+		
+
+        <div class="list_items" data-type="cafe" onclick="redirectToPage('restaurants/sehrengiz_cafe.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍔</div>
+                <div class="item-details">
+
+                    <h3>Şehrengiz Cafe</h3>
+                    <p>Address:  Vodina Cd. No:2/A</p>
+                    <div class="stars">★★★★☆</div>
+
+                </div>
+            </div>
+
+        </div>
+		
+
+        <div class="list_items" data-type="restaurant" onclick="redirectToPage('restaurants/homemade_cafe_restaurant.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍴</div>
+                <div class="item-details">
+
+                    <h3>Homemade Cafe & Kitchen</h3>
+                    <p>Address:  Yıldırım Cd. No:19</p>
+                    <div class="stars">★★★★★</div>
+
+                </div>
+            </div>
+
+        </div>
+		
+
+        <div class="list_items" data-type="restaurant" onclick="redirectToPage('restaurants/pier_cafe_restaurant.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍴</div>
+                <div class="item-details">
+
+                    <h3>Pier Cafe & Restaurant</h3>
+                    <p>Address:  Yıldırım Cd. No:16</p>
+                    <div class="stars">★★★★★</div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="list_items" data-type="cafe" onclick="redirectToPage('restaurants/dortyol_bufe.html')" style="cursor: pointer;">
+            <div class="item-info">
+
+                <div class="icons">🍞</div>
+                <div class="item-details">
+
+                    <h3>Dörtyol Büfe</h3>
+                    <p>Address: Ayan Cd. No:90/A</p>
+                    <div class="stars">★★★☆☆</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function redirectToPage(url) {
+            window.location.href = url;
+        }
+
+        function filterContent(type) {
+            const tabs = document.querySelectorAll('.tab');
+            const items = document.querySelectorAll('.list_items');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            items.forEach(item => {
+                if (type === 'all' || item.getAttribute('data-type') === type) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+
+        function sortContent() {
+            const sortBy = document.getElementById('sort').value;
+            const container = document.querySelector('.list');
+            const cards = Array.from(document.querySelectorAll('.list_items'));
+            let sortedCards;
+
+
+            if (sortBy === 'popularity') {
+                sortedCards = cards.sort((a, b) => {
+                    const stars1 = a.querySelector('.stars').textContent.length;
+                    const stars2 = b.querySelector('.stars').textContent.length;
+                    return stars2 - stars1;
+                });
+
+            } else if (sortBy === 'name') {
+                sortedCards = cards.sort((a, b) => {
+                    const name1 = a.querySelector('h3').textContent.toLowerCase();
+                    const name2 = b.querySelector('h3').textContent.toLowerCase();
+                    return name1.localeCompare(name2);
+                });
+
+            }
+
+            sortedCards.forEach(card => container.appendChild(card));
+        }
+
+        
+    </script>
+
+
+</body>
+</html>

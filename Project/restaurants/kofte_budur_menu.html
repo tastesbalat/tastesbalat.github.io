@@ -1,0 +1,175 @@
+<html>
+<head>
+    <title>Köfte Budur</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            color: #444;
+            padding: 0;
+            background-color: #f5f5dc; 
+        }
+        header {
+            background-color: #d2b48c;
+            color: #ffffff;
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 4px solid #8B4513; 
+        }
+        nav {
+            background-color: #808080;
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem;
+            border-radius: 10px; 
+            margin: 20px; 
+        }
+        nav a {
+            text-decoration: none;
+            color: #f0f0f0;
+            border-radius: 5px;
+            font-weight: 600;
+            padding: 10px 15px; 
+            font-family: 'Lora', serif;
+        }
+        nav a:hover {
+            background-color: #444; 
+            color: #8B4513; 		
+        }				
+        form {
+            background-color: #f8f8f8;
+            max-width: 600px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label, textarea {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        textarea {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+        .downpart {
+            background-color: #808080;
+            text-align: center;
+            color: #fff;
+            margin: 30px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }		
+		
+        .text-box {
+            background-color: #e0e0e0; 
+            padding: 5px;
+            border-radius: 10px;
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        }        
+		
+        .menu {
+            max-width: 650px;
+            margin: 10px auto;
+            padding: 20px;
+            background: #ffffff	;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .kategori {
+            border-bottom: 2px solid #d35400;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .yemekler {
+            margin-bottom: 15px;
+        }
+
+        .fiyat {
+            float: right;
+            color: #8B4513;
+            font-weight: bold;
+        }	
+		
+    </style>
+	
+	
+</head>
+<body>
+    <header>
+        <h1>Köfte Budur</h1>
+    </header>
+    
+    <nav>
+		<a href="../index.html">Home Page</a>
+		<a href="kofte_budur.html">General</a>
+		<a href="kofte_budur_menu.html">Menu</a>
+    </nav>
+	
+		<div class="text-box">
+			<div class="menu">
+<h2 class="kategori">Köfte Çeşitleri</h2>
+<div class="yemekler">
+    <h4>1 Porsiyon Köfte <span class="fiyat">₺245</span></h4>
+    <h4>1.5 Porsiyon Köfte <span class="fiyat">₺245</span></h4>
+    <h4>Pilav Üstü Köfte <span class="fiyat">₺260</span></h4>
+</div>
+
+<h2 class="kategori">Ekmek Çeşitleri</h2>
+<div class="yemekler">
+    <h4>Ekmek Arası Köfte <span class="fiyat">₺170</span></h4>
+    <h4>Dürüm Köfte <span class="fiyat">₺160</span></h4>
+</div>
+
+<h2 class="kategori">Aperatifler</h2>
+<div class="yemekler">
+    <h4>Patates Tabağı <span class="fiyat">₺90</span></h4>
+</div>
+
+<h2 class="kategori">Salata Çeşitleri</h2>
+<div class="yemekler">
+    <h4>Çoban Salata <span class="fiyat">₺80</span></h4>
+    <h4>Mevsim Salata <span class="fiyat">₺80</span></h4>
+</div>
+
+<h2 class="kategori">Tatlı Çeşitleri</h2>
+<div class="yemekler">
+    <h4>Sütlaç <span class="fiyat">₺50</span></h4>
+    <h4>Fıstıklı Kadayıf <span class="fiyat">₺50</span></h4>
+</div>
+
+<h2 class="kategori">Çorba Çeşitleri</h2>
+<div class="yemekler">
+    <h4>Mercimek Çorbası <span class="fiyat">₺50</span></h4>
+    <h4>Ezogelin Çorbası <span class="fiyat">₺50</span></h4>
+</div>
+
+<h2 class="kategori">Yemek Çeşitleri</h2>
+<div class="yemekler">
+    <h4>Tavuk Sote <span class="fiyat">₺170</span></h4>
+    <h4>Pilav <span class="fiyat">₺60</span></h4>
+</div>
+
+					
+        </div>
+
+    <div class="downpart">
+        <h2>@kofte.budur</h2>
+        <p>KÖFTE BUDUR</p>
+    </div>
+
+    <form>
+        <label for="expectations">Please enter your expectations from our restaurant:</label>
+        <textarea id="expectations" name="expectations" rows="4" placeholder="Your expectations..."></textarea>
+    </form>
+
+</body>
+</html>
